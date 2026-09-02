@@ -171,7 +171,7 @@ Missing, pending, failed, skipped, cancelled, timed-out, stale, or non-accepting
 
 **Normative resolution**: At `docs/issues/30-packaging-install-matrix.md:48`, The packaging check SHALL use the supported local command uv tool install '.[ml]' and SHALL test the resulting executable.
 
-**Focused verification gate**: Run packaging on a clean venv and assert uv tool install .[ml] produces a working command.
+**Focused verification gate**: Run packaging in a clean environment with the exact command `uv tool install '.[ml]'` and assert it produces a working executable; treat any unquoted or shell-expanded variant as a failed gate.
 
 **Completion boundary**: This is a design-level response contract only. Resolve this thread only after its focused gate, applicable specialist handoff, and repository full validation are terminal success for the current head/base identity.
 
